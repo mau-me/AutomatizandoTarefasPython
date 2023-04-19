@@ -10,8 +10,13 @@ import pyperclip
 
 text = pyperclip.paste()
 
-# TODO: Separar as linhas e acrescentar asteriscos
+lines = text.split('\n')
 
-print(text)
+for i in range(len(lines)):
+    lines[i] = '* ' + lines[i]
+
+newText = ('\n').join(lines)
+
+print(newText)
 
 pyperclip.copy(text)
